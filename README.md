@@ -22,5 +22,5 @@ License
 
 Author Information
 ------------------
-
-@UdelaRInterior https://proyectos.interior.edu.uy/
+[@UdelaRInterior](https://github.com/UdelaRInterior)
+https://proyectos.interior.edu.uy/
