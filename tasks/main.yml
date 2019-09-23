@@ -1,2 +1,42 @@
 ---
-# tasks file for ocs
+
+  ##install and configure apache
+- name: config apache
+  include: apache.yml
+  when: reverse_proxy_type == "apache"
+
+  ##download ocs and unarchive
+- name: download ocs and unarchive
+  unarchive:
+    src: https://pkp.sfu.ca/ocs/download/ocs-2.3.6.tar.gz
+    dest: /var/www/html
+    remote_src: yes
+
+ ##directories permissions
+- name: grant directories permissions
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: yes
+    mode: 0777
+  with_items:
+    - /var/www/html/ocs-2.3.6/public
+    - /var/www/html/ocs-2.3.6/cache
+    - /var/www/html/ocs-2.3.6/cache/t_compile
+    - /var/www/html/ocs-2.3.6/cache/t_cache
+    - /var/www/html/ocs-2.3.6/cache/t_config
+    - /var/www/html/ocs-2.3.6/cache/_db
+
+##file permissions
+- name: grant file permissions
+  file:
+    path: "{{ item }}"
+    state: file
+    mode: 0666
+  with_items:
+    - /var/www/html/ocs-2.3.6/config.inc.php
+
+#- name: run install
+#  shell: 'php /var/www/html/ocs-2.3.6/tools/install.php'
+#  args:
+#    chdir: '/var/www/html/ocs-2.3.6/tools'

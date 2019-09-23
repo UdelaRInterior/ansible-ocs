@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+        ServerName {{inventory_hostname}}
+        ServerAdmin {{apache_server_admin}}
+{% if apache_server_alias %}
+        ServerAlias {{apache_server_alias}}
+        Redirect / https://{{apache_server_alias}}
+{% else %}
+        Redirect / https://{{inventory_hostname}}
+{% endif %}
+</VirtualHost>
+
+<VirtualHost *:443>
+
+    SSLEngine on
+    SSLCertificateFile {{apache_ssl_certificate_file}}
+    SSLCertificateKeyFile {{apache_ssl_certificate_key}}
+    SSLCertificateChainFile {{apache_ssl_certificate_fullchain}}
+
+</VirtualHost>
