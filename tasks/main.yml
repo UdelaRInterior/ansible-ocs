@@ -35,8 +35,3 @@
     mode: 0666
   with_items:
     - /var/www/html/ocs-2.3.6/config.inc.php
-
-#- name: run install
-#  shell: 'php /var/www/html/ocs-2.3.6/tools/install.php'
-#  args:
-#    chdir: '/var/www/html/ocs-2.3.6/tools'
