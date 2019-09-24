@@ -1,6 +1,10 @@
 ---
 
-  ##install and configure apache
+  ##install and configure apache and php5
+- name: config php5
+  include: php5.yml
+
+  ##install and configure apache as reverse proxy
 - name: config apache
   include: apache.yml
   when: reverse_proxy_type == "apache"

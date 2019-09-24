@@ -1,6 +1,10 @@
 ---
+
+# defaults file for php5
+php_enable_webserver: true
+
 # defaults file for ocs
-inventory_hostname: host
+# inventory_hostname: host # not needed, it's a fact
 reverse_proxy_type: apache #only apache for now
 
 #apache reverse proxy variables

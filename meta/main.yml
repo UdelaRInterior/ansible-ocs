@@ -15,6 +15,9 @@ galaxy_info:
   galaxy_tags: []
 
 dependencies: 
+  - geerlingguy.apache
+  - geerlingguy.php-versions
+  - geerlingguy.php
   - geerlingguy.postgresql
   - geerlingguy.certbot
   
