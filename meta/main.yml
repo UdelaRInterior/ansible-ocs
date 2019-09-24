@@ -16,5 +16,5 @@ galaxy_info:
 
 dependencies: 
   - geerlingguy.postgresql
-#  - geerlingguy.certbot
+  - geerlingguy.certbot
   

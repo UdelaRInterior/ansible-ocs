@@ -1,22 +1,24 @@
-On developing...
 
 Role Name
 =========
 
+An Ansible role that installs ocs(open conference systems) with apache.
+
+Version
+------------
+
+ocs-2.3.6
 
 Requirements
 ------------
 
-Role Variables
---------------
-
+PHP 5.x
 
 Dependencies
 ------------
 
-
-Example Playbook
-----------------
+[*geerlingguy.postgresql](https://galaxy.ansible.com/geerlingguy/postgresql)  
+[*geerlingguy.certbot](https://galaxy.ansible.com/geerlingguy/certbot)
 
 License
 -------
@@ -25,6 +27,6 @@ License
 
 Author Information
 ------------------
-[@dkmarce](https://github.com/dkmarce)
-[@UdelaRInterior](https://github.com/UdelaRInterior)
+[@dkmarce](https://github.com/dkmarce)  
+[@UdelaRInterior](https://github.com/UdelaRInterior)  
 https://proyectos.interior.edu.uy/
