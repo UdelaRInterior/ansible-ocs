@@ -12,6 +12,7 @@ ocs-2.3.6
 Requirements
 ------------
 
+Debian 9
 PHP 5.x
 
 Dependencies
