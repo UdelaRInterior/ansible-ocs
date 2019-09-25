@@ -16,3 +16,17 @@
   apt:
     pkg: libapache2-mod-php{{ php_version }}
     state: present
+
+- name: install postgresql php5.6 extension
+  apt:
+    name:
+      - php5-pgsql
+    state: present
+    update_cache: yes
+
+- name: apache php scripts 
+  comand: "{{item}}"
+  become: yes
+  with_items:
+    - a2enmod proxy_fcgi setenvif
+    - a2enconf php5.6-fpm
