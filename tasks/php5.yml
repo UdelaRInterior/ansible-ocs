@@ -25,7 +25,7 @@
     update_cache: yes
 
 - name: apache php scripts 
-  comand: "{{item}}"
+  command: "{{item}}"
   become: yes
   with_items:
     - a2enmod proxy_fcgi setenvif
