@@ -1,0 +1,18 @@
+---
+## Install apache and php5
+
+- name: Update apt cache.
+  apt: update_cache=true cache_valid_time=600
+  when: ansible_os_family == 'Debian'
+
+- include_role: 
+    name: geerlingguy.apache
+- include_role:
+    name: geerlingguy.php-versions
+- include_role:
+    name: geerlingguy.php
+
+- name: install libapache2-mod-php
+  apt:
+    pkg: libapache2-mod-php{{ php_version }}
+    state: present
